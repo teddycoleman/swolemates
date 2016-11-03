@@ -20,3 +20,4 @@ User.create(name: 'Natalia', email: 'natalia@fruit.com', gender: 'Female', age: 
 Result.create(user_id: 1, workout_id: 1, qty: 35, unit: 'minutes')
 Result.create(user_id: 1, workout_id: 5, qty: 7, unit: 'minutes')
 Result.create(user_id: 1, workout_id: 4, qty: 75, unit: 'minutes')
+
