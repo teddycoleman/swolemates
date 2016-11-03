@@ -1,5 +1,6 @@
 class ResultsController < ApplicationController
   def index
+    redirect_to result_path(@result)
   end
   def create
   end
