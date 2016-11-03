@@ -1,0 +1,4 @@
+Workout.create(title: '5 mile run', description: '5 miles straight of running', qty: 5, unit: 'miles', unit_of_competition: 'mins')
+Workout.create(title: '10 mile run', description: '10 miles straight of running', qty: 10, unit: 'miles', unit_of_competition: 'mins')
+Workout.create(title: '10 mile ride', description: '10 miles straight of biking', qty: 10, unit: 'miles', unit_of_competition: 'mins')
+Workout.create(title: '25 mile ride', description: '25 miles straight of biking', qty: 25, unit: 'miles', unit_of_competition: 'mins')
