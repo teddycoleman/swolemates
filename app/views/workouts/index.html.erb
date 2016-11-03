@@ -1,32 +1,33 @@
 <h1>Welcome</h1>
 <div class='jumbotron'>
   <div class='container'>
-<% @workouts.each do |f| %>
-<div><h3><%= f.title %></h3><br>
-<%= f.description %>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-  Log Workout
-</button>
-</div>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        <h1><%= f.title %></h1>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary">Log</button>
+  <% @workouts.each do |f| %>
+    <div><h3><%= f.title %></h3><br>
+      <%= f.description %>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-<%=f.id%>">
+        Log Workout
+      </button>
+    </div>
+    <div class="modal fade" id="modal-<%=f.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            <h3><%= f.title %></h3>
+            It took me <%= form_for @result do |h| %>
+              <%= h.text_field :qty %>
+             <%= f.unit_of_competition %>
+            <%= h.submit %>
+             <% end %>
+          </div>
+        </div>
       </div>
     </div>
+  <% end %>
   </div>
-</div>
-<% end %>
-</div>
 </div>
